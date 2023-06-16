@@ -206,7 +206,7 @@ def calculate_arabam():
         int(yas[0])
     ]
 
-    model_ctb = pickle.load(open('arabam/catboost.pkl', 'rb'))
+    model_ctb = pickle.load(open('catboost.pkl', 'rb'))
     newCar = np.array(newCar).reshape(1, -1)
     y_pred = int(model_ctb.predict(newCar))
 
@@ -236,7 +236,7 @@ def calculate_emlak():
     yasi = args["yasi"],
     isitma_tipi = args["isitma_tipi"],
 
-    df = pd.read_excel(r"C:/Users/batu_/OneDrive/Belgeler/GitHub/bitirme/emlak_jet/emlakjet-2.xlsx")
+    df = pd.read_excel("emlakjet-2.xlsx")
     df.drop(["full_isim"], axis=1, inplace=True)
     df.drop(["kategorisi"], axis=1, inplace=True)
     df.dropna(how="all", inplace=True)
@@ -440,7 +440,7 @@ def calculate_emlak():
         isitma_tipi_VRV, isitma_tipi_Yerdenisitma, isitma_tipi_Somine
     ]
 
-    model_ctb = pickle.load(open('emlak_jet/emlakjet_model.pkl', 'rb'))
+    model_ctb = pickle.load(open('emlakjet_model.pkl', 'rb'))
     newEmlak = np.array(newEmlak).reshape(1, -1)
     y_pred = int(model_ctb.predict(newEmlak))
 
