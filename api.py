@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello World'
 
 @app.route('/api/v1/arabam', methods=["GET", 'POST'])
 def calculate_arabam():
@@ -29,6 +29,9 @@ def calculate_arabam():
     replacedParts = args["replacedParts"],
     exchange = args["exchange"],
     yas = args["yas"]
+
+    print(args)
+    print(brand)
 
     dict_Marka = {'Audi': 0, 'BMW': 1, 'Chevrolet': 2, 'Citroen': 3, 'DS Automobiles': 4, 'Dacia': 5, 'Fiat': 6,
                   'Ford': 7, 'Honda': 8, 'Hyundai': 9, 'Kia': 10, 'MINI': 11, 'Mazda': 12, 'Mercedes - Benz': 13,
