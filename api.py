@@ -7,6 +7,9 @@ from sklearn.preprocessing import LabelEncoder
 
 app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 
 @app.route('/api/v1/arabam', methods=["GET", 'POST'])
 def calculate_arabam():
